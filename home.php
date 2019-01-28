@@ -48,6 +48,7 @@ get_header();
             </section>
 
             <section class="expertise container section-padding" id="expertise">
+
                 <div class="section-headline">
                     <h2 class="section-title"><?php echo CFS()->get('section_title_expertise'); ?></h2>
                     <p class="section-description"><?php echo CFS()->get('section_description_expertise'); ?></p>
@@ -56,18 +57,7 @@ get_header();
                 <div class="expertise__list-wrap">
                     <ul class="expertise__list">
 
-                        <?php $fields = CFS()->get('expertise_list_home');
-                        foreach ($fields as $field) { ?>
-
-                            <li class="expertise__item">
-                                <div class="expertise__item-icon">
-                                    <img src="<?php echo $field['item_icon_expertise_list']; ?>" alt="Item icon">
-                                </div>
-                                <h3 class="expertise__item-title"><?php echo $field['item_title_expertise_list']; ?></h3>
-                                <p class="expertise__item-description"><?php echo $field['item_text_expertise_list']; ?></p>
-                            </li>
-
-                        <?php }; ?>
+                        <?php get_template_part('template-parts/content-expertise', 'expertise'); ?>
 
                     </ul>
                 </div>
@@ -84,25 +74,7 @@ get_header();
                     </div>
 
                     <ul class="our-team__list">
-                        <?php
-                        //The query
-                        $args = array(
-                            'post_type' => 'our_team',
-                            'order' => 'ASC',
-                            'posts_per_page' => 4
-                        );
-                        $members = new WP_Query($args); ?>
-
-                        <?php if ($members->have_posts()): ?>
-
-                            <!-- The loop -->
-                            <?php while ($members->have_posts()) : $members->the_post(); ?>
-                                <?php get_template_part('template-parts/content-our-team', 'team'); ?>
-                            <?php endwhile; ?>
-                            <!-- End of the loop -->
-
-                            <?php wp_reset_query(); ?>
-                        <?php endif; ?>
+                        <?php get_template_part('template-parts/content-our-team', 'team'); ?>
                     </ul>
 
                     <p class="become-team">Become part of our dream team, let’s join us !</p>
@@ -121,25 +93,7 @@ get_header();
 
                 <ul class="our-works__list">
 
-                    <?php
-                    //The query
-                    $args = array(
-                        'post_type' => 'our_works',
-                        'order' => 'ASC',
-                        'posts_per_page' => 12
-                    );
-                    $works = new WP_Query($args); ?>
-
-                    <?php if ($works->have_posts()): ?>
-
-                        <!-- The loop -->
-                        <?php while ($works->have_posts()) : $works->the_post(); ?>
-                            <?php get_template_part('template-parts/content-our-works', 'works'); ?>
-                        <?php endwhile; ?>
-                        <!-- End of the loop -->
-
-                        <?php wp_reset_query(); ?>
-                    <?php endif; ?>
+                    <?php get_template_part('template-parts/content-our-works', 'works'); ?>
 
                 </ul>
 
@@ -150,7 +104,9 @@ get_header();
                     url('<?php echo CFS()->get('background_image_home_people_say'); ?>')">
                 <div class="container">
                     <ul class="testimonials__list">
+
                         <?php get_template_part('template-parts/content-testimonials', 'testimonials'); ?>
+
                     </ul>
                 </div>
             </section>
@@ -160,7 +116,9 @@ get_header();
                     <h2 class="section-title"><?php echo CFS()->get('title_for_contact_form_home'); ?></h2>
 
                     <div class="contact__contact-form">
+
                         <?php echo do_shortcode('[contact-form-7 id="123" title="Contact form"]'); ?>
+
                     </div>
                 </div>
 
@@ -168,14 +126,9 @@ get_header();
                     <h2 class="section-title"><?php echo CFS()->get('title_for_our_clients_home'); ?></h2>
 
                     <ul class="contact__clients-logo-list">
-                        <?php
-                        $fields = CFS()->get('our_clients_logos_home');
-                        foreach ($fields as $field) {
-                            ; ?>
-                            <li class="contact__clients-logo-item">
-                                <img src="<?php echo $field['customer_logo_contact_home']; ?>" alt="Clients logo">
-                            </li>
-                        <?php }; ?>
+
+                        <?php get_template_part('template-parts/content-customers-logo', 'logos'); ?>
+
                     </ul>
                 </div>
             </section>

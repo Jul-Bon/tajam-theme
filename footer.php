@@ -17,6 +17,7 @@
         linear-gradient(to right, rgba(9, 5, 47, .85) 0%, rgba(49, 29, 94, .85) 100%),
         url('<?php echo get_theme_mod('footer-bg'); ?>')">
     <div class="site-info container">
+
         <div class="footer__top-part">
 
             <div class="footer__logo-part">
@@ -102,6 +103,7 @@
 
     </div><!-- .site-info -->
 </footer><!-- #colophon -->
+
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

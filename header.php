@@ -56,7 +56,7 @@
 
             <h1 class="main-title"><?php echo CFS()->get('main_headline'); ?></h1>
 
-            <ul class="main-banner__descriptions-list single-item">
+            <ul class="main-banner__descriptions-list bannar-slider">
 
                 <?php
                 $fields = CFS()->get('list_of_descriptions_main_banner');
