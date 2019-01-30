@@ -1,4 +1,3 @@
-
 <div class="testimonials__list slider-for">
     <?php
     //The query
@@ -45,3 +44,4 @@
         <?php wp_reset_query(); ?>
     <?php endif; ?>
 </div>
+

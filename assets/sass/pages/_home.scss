@@ -213,6 +213,7 @@
 .our-team {
     @include bg-properties;
     text-align: center;
+    position: relative;
 
     .section-headline {
         &:after {
@@ -296,6 +297,8 @@
 }
 
 .our-works {
+    position: relative;
+
     &__headline {
         display: flex;
         align-items: center;
@@ -322,6 +325,11 @@
         position: relative;
         display: flex;
         align-items: center;
+        transition: .5s;
+
+        &:hover {
+            color: $accent-color;
+        }
 
         &:after {
             content: '\f105';
@@ -337,13 +345,13 @@
     &__list {
         @include clearlist;
         margin-top: 70px;
-        margin-bottom: 70px;
+        margin-bottom: 110px;
         display: flex;
         flex-wrap: wrap;
 
         @media (max-width: 640px) {
             margin-top: 40px;
-            margin-bottom: 40px;
+            margin-bottom: 60px;
         }
     }
 
@@ -366,6 +374,20 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+    }
+
+    .btn {
+        width: 140px;
+        text-align: center;
+        cursor: pointer;
+        position: absolute;
+        bottom: 70px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        @media (max-width: 640px) {
+            bottom: 40px;
         }
     }
 }

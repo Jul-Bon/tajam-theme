@@ -1,0 +1,43 @@
+.hiring-block {
+    padding: 40px;
+    max-width: 940px;
+    width: 90%;
+    margin: 0 auto;
+    background-color: #332a55;
+    color: $light-text-color;
+    text-align: left;
+    display: flex;
+    position: absolute;
+    top: 170px;
+    transform: translateY(100%);
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+    transition: .5s;
+
+    @media (max-width: 992px) {
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        padding: 20px 30px;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.show-hiring-block {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    z-index: 10;
+    transition: .5s;
+}
+
+.active-btn {
+    color: $light-text-color;
+    background-color: $accent-color;
+}

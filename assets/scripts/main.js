@@ -66,6 +66,29 @@
         }, 600);
     });
 
+    //Script for popup
+    $('.popup-btn').on('click', function () {
+        $('.story-popup').addClass('show-popup');
+        $('body').addClass('non-scroll');
+    });
+
+    $('.close-popup').on('click', function () {
+        $('.story-popup').removeClass('show-popup');
+        $('body').removeClass('non-scroll');
+    });
+
+    //Script for WE ARE HIRING block
+    $('.hiring-button').on('click', function () {
+        $('.hiring-block').toggleClass('show-hiring-block');
+        var text = $('.hiring-button').text();
+        
+        if ( text == 'WE ARE HIRING') {
+            $('.hiring-button').text('Hide block');
+        } else {
+            $('.hiring-button').text('WE ARE HIRING');
+        }
+    });
+
 })(jQuery);
 
 
